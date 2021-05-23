@@ -2,10 +2,10 @@ CREATE DATABASE ConfectioneryFactory;
 
 CREATE TABLE Products
 ( 
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , ID_Name INTEGER NOT NULL
   , ID_Type INTEGER NOT NULL
-  , Price INTEGER NOT NULL
+  , Price MONEY NOT NULL
   , InceptDate DATE NOT NULL
   , ExpirationDate DATE NOT NULL
   , NumOfProducts INTEGER NOT NULL
@@ -13,21 +13,21 @@ CREATE TABLE Products
 
 CREATE TABLE [Name]
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , [Name] NVARCHAR(30) NOT NULL
 );
 
 CREATE TABLE [Type]
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , [Type] NVARCHAR(30) NOT NULL
 );
 
 CREATE TABLE Ingredients
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , [Name] NVARCHAR(30) NOT NULL
-  , Price INTEGER NOT NULL
+  , Price MONEY NOT NULL
   , InceptDate DATE NOT NULL
   , ExpirationDate DATE NOT NULL
   , NumOfIngredients INTEGER NOT NULL
@@ -35,7 +35,7 @@ CREATE TABLE Ingredients
 
 CREATE TABLE Shops
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , ID_Address INTEGER NOT NULL
   , [Name] NVARCHAR(30) NOT NULL
   , PhoneNum NVARCHAR(30) NOT NULL
@@ -43,7 +43,7 @@ CREATE TABLE Shops
 
 CREATE TABLE Addresses
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , ID_City INTEGER NOT NULL
   , ID_Street INTEGER NOT NULL
   , ID_House INTEGER NOT NULL
@@ -52,7 +52,7 @@ CREATE TABLE Addresses
 
 CREATE TABLE Providers
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , ID_Address INTEGER NOT NULL
   , [Name] NVARCHAR(30) NOT NULL
   , PhoneNum NVARCHAR(30) NOT NULL
@@ -60,32 +60,32 @@ CREATE TABLE Providers
 
 CREATE TABLE Cities
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , City NVARCHAR(30) NOT NULL
 );
 
 CREATE TABLE Streets
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , Street NVARCHAR(30) NOT NULL
 );
 
 CREATE TABLE Houses
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , House INTEGER NOT NULL
 );
 
 CREATE TABLE Buildings
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , Building INTEGER NOT NULL
 );
 
 
 CREATE TABLE Products_Ingredients
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , ID_Product INTEGER NOT NULL
   , ID_Ingredient INTEGER NOT NULL
 );
@@ -93,7 +93,7 @@ CREATE TABLE Products_Ingredients
 
 CREATE TABLE Ingredients_Providers
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , ID_Provider INTEGER NOT NULL
   , ID_Ingredient INTEGER NOT NULL
 );
@@ -101,7 +101,7 @@ CREATE TABLE Ingredients_Providers
 
 CREATE TABLE Products_Shops
 (
-    ID INT PRIMARY KEY
+    ID INTEGER PRIMARY KEY
   , ID_Product INTEGER NOT NULL
   , ID_Shop INTEGER NOT NULL
 );
@@ -120,39 +120,39 @@ VALUES
 
 INSERT INTO [Name]
 VALUES
-    (1, 'Сладкоежка')
-  , (2, 'Зимняя сказка')
-  , (3, 'Рандеву')
-  , (4, 'Париж')
-  , (5, 'Дуэт')
-  , (6, 'Ванильное небо')
-  , (7, 'Снежная королева')
-  , (8, 'Карамельное наслаждение');
+    (1, 'РЎР»Р°РґРєРѕРµР¶РєР°')
+  , (2, 'Р—РёРјРЅСЏСЏ СЃРєР°Р·РєР°')
+  , (3, 'Р Р°РЅРґРµРІСѓ')
+  , (4, 'РџР°СЂРёР¶')
+  , (5, 'Р”СѓСЌС‚')
+  , (6, 'Р’Р°РЅРёР»СЊРЅРѕРµ РЅРµР±Рѕ')
+  , (7, 'РЎРЅРµР¶РЅР°СЏ РєРѕСЂРѕР»РµРІР°')
+  , (8, 'РљР°СЂР°РјРµР»СЊРЅРѕРµ РЅР°СЃР»Р°Р¶РґРµРЅРёРµ');
 
 INSERT INTO [Type] 
 VALUES
-    (1, 'Пончик')
-  , (2, 'Торт')
-  , (3, 'Круассан')
-  , (4, 'Пироженное')
-  , (5, 'Вафля');
+    (1, 'РџРѕРЅС‡РёРє')
+  , (2, 'РўРѕСЂС‚')
+  , (3, 'РљСЂСѓР°СЃСЃР°РЅ')
+  , (4, 'РџРёСЂРѕР¶РµРЅРЅРѕРµ')
+  , (5, 'Р’Р°С„Р»СЏ');
 
 INSERT INTO Ingredients
 VALUES
-    (1, 'Мука', 40, GETDATE()-20, GETDATE() + 90, 1000)
-  , (2, 'Сахар', 30, GETDATE()-20, GETDATE() + 90, 1000)
-  , (3, 'Яица', 60, GETDATE()-10, GETDATE() + 50, 2000)
-  , (4, 'Молоко', 70, GETDATE()-10, GETDATE() + 20, 2000)
-  , (5, 'Сливочное масло', 100, GETDATE()-10, GETDATE() + 30, 2000)
-  , (6, 'Сливки', 80, GETDATE()-10, GETDATE() + 10, 1500);
+    (1, 'РњСѓРєР°', 40, GETDATE()-20, GETDATE() + 90, 1000)
+  , (2, 'РЎР°С…Р°СЂ', 30, GETDATE()-20, GETDATE() + 90, 1000)
+  , (3, 'РЇРёС†Р°', 60, GETDATE()-10, GETDATE() + 50, 2000)
+  , (4, 'РњРѕР»РѕРєРѕ', 70, GETDATE()-10, GETDATE() + 20, 2000)
+  , (5, 'РЎР»РёРІРѕС‡РЅРѕРµ РјР°СЃР»Рѕ', 100, GETDATE()-10, GETDATE() + 30, 2000)
+  , (6, 'РЎР»РёРІРєРё', 80, GETDATE()-10, GETDATE() + 10, 1500);
 
 INSERT INTO Providers
 VALUES
-    (1, 1, 'ООО "Кудесница"', 88005566788)
-  , (2, 2, 'ОАО "Русский сахар"', 88004536277)
-  , (3, 3, 'ООО "Волжское"', 88009087345)
-  , (4, 4, 'ООО "Домик в деревне"', 88006523478)
-  , (5, 5, 'ОАО "Экомилк"', 88008723612);
+    (1, 1, 'РћРћРћ "РљСѓРґРµСЃРЅРёС†Р°"', 88005566788)
+  , (2, 2, 'РћРђРћ "Р СѓСЃСЃРєРёР№ СЃР°С…Р°СЂ"', 88004536277)
+  , (3, 3, 'РћРћРћ "Р’РѕР»Р¶СЃРєРѕРµ"', 88009087345)
+  , (4, 4, 'РћРћРћ "Р”РѕРјРёРє РІ РґРµСЂРµРІРЅРµ"', 88006523478)
+  , (5, 5, 'РћРђРћ "Р­РєРѕРјРёР»Рє"', 88008723612);
 
 INSERT INTO Ingredients_Providers
 VALUES
@@ -178,10 +178,10 @@ VALUES
 
 INSERT INTO Shops
 VALUES
-    (1,6,'Галерея вкуса',84956774312)
-  , (2,7,'Пират-шоколад', 84950093432)
-  , (3,8,'Королевские сладости', 84955664891)
-  , (4,9,'Конфети', 84958922774);
+    (1,6,'Р“Р°Р»РµСЂРµСЏ РІРєСѓСЃР°',84956774312)
+  , (2,7,'РџРёСЂР°С‚-С€РѕРєРѕР»Р°Рґ', 84950093432)
+  , (3,8,'РљРѕСЂРѕР»РµРІСЃРєРёРµ СЃР»Р°РґРѕСЃС‚Рё', 84955664891)
+  , (4,9,'РљРѕРЅС„РµС‚Рё', 84958922774);
 
 INSERT INTO Addresses
 VALUES
@@ -198,19 +198,19 @@ VALUES
 
 INSERT INTO Cities
 VALUES
-    (1, 'Москва')
-  , (2, 'Люберцы')
-  , (3, 'Чехов');
+    (1, 'РњРѕСЃРєРІР°')
+  , (2, 'Р›СЋР±РµСЂС†С‹')
+  , (3, 'Р§РµС…РѕРІ');
 
 INSERT INTO Streets
 VALUES
-    (1, 'ул. Новослободская')
-  , (2, 'ул. Костромская')
-  , (3, 'ул. Королёва')
-  , (4, 'пр. Мира')
-  , (5, 'ул. Строителей')
-  , (6, 'ул. Каменная')
-  , (7, 'Садовый пер.');
+    (1, 'СѓР». РќРѕРІРѕСЃР»РѕР±РѕРґСЃРєР°СЏ')
+  , (2, 'СѓР». РљРѕСЃС‚СЂРѕРјСЃРєР°СЏ')
+  , (3, 'СѓР». РљРѕСЂРѕР»С‘РІР°')
+  , (4, 'РїСЂ. РњРёСЂР°')
+  , (5, 'СѓР». РЎС‚СЂРѕРёС‚РµР»РµР№')
+  , (6, 'СѓР». РљР°РјРµРЅРЅР°СЏ')
+  , (7, 'РЎР°РґРѕРІС‹Р№ РїРµСЂ.');
 
 INSERT INTO Houses
 VALUES
@@ -242,7 +242,7 @@ VALUES
   , (8,8,3);
 
 
---Присоединяем таблицу [Type] и [Name] к таблице Products
+--РџСЂРёСЃРѕРµРґРёРЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ [Type] Рё [Name] Рє С‚Р°Р±Р»РёС†Рµ Products
 SELECT Products.ID
      , Products.ID_Name
      , [Name].[Name]
@@ -258,7 +258,7 @@ ON Products.ID_Name = [Name].ID
 INNER JOIN [Type]
 ON Products.ID_Type = [Type].ID;
 
---Присоединяем таблицу Products к таблице Products_Ingredients
+--РџСЂРёСЃРѕРµРґРёРЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ Products Рє С‚Р°Р±Р»РёС†Рµ Products_Ingredients
 SELECT Products.ID
      , [Name].[Name]
      , [Type].[Type]
@@ -282,7 +282,7 @@ ON Products.ID_Type = [Type].ID
 INNER JOIN Ingredients
 ON Products_Ingredients.ID_Ingredient = Ingredients.ID;
 
---Присоединяем таблицу Ingredients к таблице Ingredients_Providers
+--РџСЂРёСЃРѕРµРґРёРЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ Ingredients Рє С‚Р°Р±Р»РёС†Рµ Ingredients_Providers
 SELECT Ingredients.ID
      , Ingredients.[Name]
 	 , Ingredients.Price
@@ -313,7 +313,7 @@ ON Addresses.ID_House = Houses.ID
 INNER JOIN Buildings
 ON Addresses.ID_Building = Buildings.ID;
 
---Присоединяем таблицу Products к таблице Products_Shops
+--РџСЂРёСЃРѕРµРґРёРЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ Products Рє С‚Р°Р±Р»РёС†Рµ Products_Shops
 SELECT Products.ID
      , [Name].[Name]
      , [Type].[Type]
@@ -349,7 +349,7 @@ ON Addresses.ID_House = Houses.ID
 INNER JOIN Buildings
 ON Addresses.ID_Building = Buildings.ID;
 
---Присоединяем таблицы Cities, Streets, Houses, Buildings к таблице Addresses
+--РџСЂРёСЃРѕРµРґРёРЅСЏРµРј С‚Р°Р±Р»РёС†С‹ Cities, Streets, Houses, Buildings Рє С‚Р°Р±Р»РёС†Рµ Addresses
 SELECT Addresses.ID_City
      , Cities.City
      , Addresses.ID_Street
@@ -368,7 +368,7 @@ ON Addresses.ID_House = Houses.ID
 INNER JOIN Buildings
 ON Addresses.ID_Building = Buildings.ID;
 
---Присоединяем таблицу Addresses к таблице Shops
+--РџСЂРёСЃРѕРµРґРёРЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ Addresses Рє С‚Р°Р±Р»РёС†Рµ Shops
 SELECT Shops.[Name]
 	 , Shops.PhoneNum
 	 , Shops.ID_Address
@@ -388,7 +388,7 @@ ON Addresses.ID_House = Houses.ID
 INNER JOIN Buildings
 ON Addresses.ID_Building = Buildings.ID;
 
---Присоединяем таблицу Addresses к таблице Providers
+--РџСЂРёСЃРѕРµРґРёРЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ Addresses Рє С‚Р°Р±Р»РёС†Рµ Providers
 SELECT Providers.[Name]
      , Providers.PhoneNum
 	 , Providers.ID_Address
@@ -407,3 +407,4 @@ INNER JOIN Houses
 ON Addresses.ID_House = Houses.ID
 INNER JOIN Buildings
 ON Addresses.ID_Building = Buildings.ID;
+

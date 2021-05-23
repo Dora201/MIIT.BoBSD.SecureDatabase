@@ -1,4 +1,4 @@
---Показать список продуктов, заказываемых у данного поставщика
+--РџРѕРєР°Р·Р°С‚СЊ СЃРїРёСЃРѕРє РїСЂРѕРґСѓРєС‚РѕРІ, Р·Р°РєР°Р·С‹РІР°РµРјС‹С… Сѓ РґР°РЅРЅРѕРіРѕ РїРѕСЃС‚Р°РІС‰РёРєР°
 SELECT Ingredients.ID
      , Ingredients.[Name]
 	 , Providers.ID
@@ -8,4 +8,4 @@ INNER JOIN Ingredients
 ON Ingredients_Providers.ID_Ingredient = Ingredients.ID
 INNER JOIN Providers
 ON Ingredients_Providers.ID_Provider = Providers.ID
-WHERE Providers.[Name] LIKE '%милк%'
+WHERE Providers.[Name] LIKE '%РјРёР»Рє%'

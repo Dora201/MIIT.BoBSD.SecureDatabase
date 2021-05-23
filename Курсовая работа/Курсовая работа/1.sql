@@ -1,4 +1,4 @@
---Показать список магазинов, заказывающих данный товар/
+--РџРѕРєР°Р·Р°С‚СЊ СЃРїРёСЃРѕРє РјР°РіР°Р·РёРЅРѕРІ, Р·Р°РєР°Р·С‹РІР°СЋС‰РёС… РґР°РЅРЅС‹Р№ С‚РѕРІР°СЂ/
 SELECT Products.ID
      , [Name].[Name]
      , [Type].[Type]
@@ -13,4 +13,4 @@ INNER JOIN [Type]
 ON Products.ID_Type = [Type].ID
 INNER JOIN Shops
 ON Products_Shops.ID_Shop = Shops.ID
-WHERE [Type].[Type] LIKE '%Пончик%';
+WHERE [Type].[Type] LIKE '%РџРѕРЅС‡РёРє%';
